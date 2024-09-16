@@ -1,26 +1,24 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+
 function App() {
   return (
     <Grid
       templateAreas={{
         base: `"nav" "main"`,
-        lg: '`"nav nav" "aside main"`',
+        lg: `"nav nav" "aside main"`,
       }}
+      width="100vw" // Ensure the Grid takes full viewport width
     >
-      <GridItem area="nav">
+      <GridItem area="nav" width="100%">
         <NavBar />
       </GridItem>
 
       <Show above="lg">
-        <GridItem area="aside" bg="gold">
-          Aside
-        </GridItem>
+        <GridItem area="aside">Aside</GridItem>
       </Show>
 
-      <GridItem area="main" bg="dodgerblue">
-        main
-      </GridItem>
+      <GridItem area="main">main</GridItem>
     </Grid>
   );
 }
